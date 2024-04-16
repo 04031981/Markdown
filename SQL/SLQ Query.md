@@ -40,6 +40,7 @@
 
 16. <span style="color:crimson">[Transacciones](#transacciones)</span>
 
+17. <span style="color:crimson">[Logs](#logs)</span>
 
  <span style="color:purple">[Historial de Versiones](#historial-de-versiones)</span>
 ---
@@ -316,6 +317,62 @@ Esto garantiza que las dos actualizaciones se realicen correctamente o ninguna d
 Espero que estos ejemplos te sean útiles para comprender cómo se utilizan estas sentencias en SQL Server. Si necesitas más ejemplos o explicaciones, no dudes en pedirlos.
 
 
+
+
+##  Logs
+
+<span style="color:purple">[Inicio](#tabla-de-contenido)</span>
+
+
+17. **Logs:**
+
+
+Para realizar la lectura de logs en Grafana, generalmente se utiliza Loki, que es un sistema de agregación y consulta de logs para entornos de nube. Loki está diseñado para ser utilizado junto con Grafana para proporcionar visualización y análisis de logs.
+
+```C#
+Registro de acceso a una aplicación dentro del contenedor:
+
+
+2024-04-16T10:30:00.456789012Z [INFO] Acceso a la aplicación: GET /api/users - 200 OK
+
+
+
+
+
+Registro de error estándar (stderr):
+
+2024-04-16T10:25:15.345678901Z [ERROR] Ocurrió un error en el contenedor: Error de conexión a la base de datos.
+
+```
+
+```
+
+1xx: Respuestas informativas (por ejemplo, 100 Continue).
+
+
+2xx: Respuestas exitosas (por ejemplo, 200 OK, 201 Created).
+
+
+3xx: Redirecciones (por ejemplo, 301 Moved Permanently, 302 Found).
+
+
+4xx: Errores del cliente (por ejemplo, 400 Bad Request, 404 Not Found).
+
+
+5xx: Errores del servidor (por ejemplo, 500 Internal Server Error, 503 Service Unavailable).
+
+
+```
+
+
+## 2024-04-16T10:30:00.456789012Z:
+ Esta es la marca de tiempo del registro, que sigue el formato "Año-Mes-DíaTHora:Minuto:Segundo.MilisegundoNanosegundoZ". En este caso, el registro ocurrió el 16 de abril de 2024 a las 10:30:00, con 456789012 milisegundos y nanosegundos, en el huso horario UTC ('Z' indica Zulu, UTC).
+
+## [INFO]:
+ Indica el nivel de severidad del log. En este caso, es un mensaje de información (INFO), que generalmente se utiliza para registros informativos que no son ni errores ni advertencias, sino simplemente para proporcionar información sobre eventos en el sistema.
+
+ ## Acceso a la aplicación:
+  GET /api/users - 200 OK: Este es el contenido del mensaje de registro. Indica que se realizó una solicitud GET a la ruta "/api/users" en la aplicación, y el servidor respondió con un código de estado HTTP 200, que significa que la solicitud fue exitosa. Este tipo de registro es común en aplicaciones web y API, y es útil para rastrear el tráfico y el comportamiento de los usuarios en la aplicación.
 
 ---
 ## Historial de Versiones
