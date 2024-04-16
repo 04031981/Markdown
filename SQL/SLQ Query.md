@@ -374,6 +374,45 @@ Registro de error estándar (stderr):
  ## Acceso a la aplicación:
   GET /api/users - 200 OK: Este es el contenido del mensaje de registro. Indica que se realizó una solicitud GET a la ruta "/api/users" en la aplicación, y el servidor respondió con un código de estado HTTP 200, que significa que la solicitud fue exitosa. Este tipo de registro es común en aplicaciones web y API, y es útil para rastrear el tráfico y el comportamiento de los usuarios en la aplicación.
 
+
+---
+##  PROCEDURE
+
+18. **Procedimiento almacenado en SQL Server:**
+
+Crear un procedimiento almacenado en SQL Server para interactuar con una tabla llamada "prestamos" en una base de datos llamada "banco". Aquí tienes un ejemplo básico de cómo podrías definir un procedimiento almacenado para insertar un préstamo en la tabla:
+
+```sql
+CREATE PROCEDURE InsertarPrestamo
+    @ClienteID INT,
+    @Monto DECIMAL(18, 2),
+    @TasaInteres DECIMAL(5, 2),
+    @PlazoMeses INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- Insertar el nuevo préstamo en la tabla
+    INSERT INTO banco.dbo.prestamos (ClienteID, Monto, TasaInteres, PlazoMeses, FechaInicio)
+    VALUES (@ClienteID, @Monto, @TasaInteres, @PlazoMeses, GETDATE());
+END
+```
+
+Este procedimiento almacenado llamado InsertarPrestamo toma cuatro parámetros: @ClienteID (ID del cliente que solicita el préstamo), @Monto (monto del préstamo), @TasaInteres (tasa de interés del préstamo) y @PlazoMeses (plazo en meses para pagar el préstamo). La fecha de inicio del préstamo se establece automáticamente utilizando la función GETDATE().
+
+Ejecutar este procedimiento almacenado con los valores adecuados para insertar un nuevo préstamo en la tabla. Por ejemplo:
+
+```sql
+
+EXEC InsertarPrestamo @ClienteID = 12345, @Monto = 10000.00, @TasaInteres = 5.5, @PlazoMeses = 12;
+
+```
+Este código ejecutará el procedimiento almacenado InsertarPrestamo con los valores proporcionados, insertando un nuevo préstamo en la tabla "prestamos". Asegúrate de ajustar los tipos de datos y las restricciones según sea necesario para tu caso de uso específico.
+
+
+
+
+
 ---
 ## Historial de Versiones
 
