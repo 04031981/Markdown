@@ -59,6 +59,7 @@
 
 
 ## Conceptos Básicos de Docker
+
  <span style="color:purple">[Inicio](#tabla-de-contenido)</span>
 
 1- Contenedores: Los contenedores son unidades ligeras y portátiles que incluyen todo lo necesario para ejecutar una aplicación, como el código, las bibliotecas y las dependencias. Son más eficientes que las máquinas virtuales (VM) porque comparten el mismo sistema operativo host y solo contienen los archivos y configuraciones necesarios para ejecutarse.
@@ -744,7 +745,7 @@ comando: El comando que se desea ejecutar dentro del servicio.
 ---
 ## Historial de Versiones
 
-
+<span style="color:purple">[Inicio](#tabla-de-contenido)</span>
 Fecha       | Versión | Autor                 | Organización | Descripción
 ------------|---------|-----------------------|--------------|------------
 07/06/2024  | 01      | Dario Cano Valdegaray | Uso Personal | Docker
