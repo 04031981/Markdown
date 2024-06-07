@@ -9,53 +9,52 @@
 
 ## **Tabla de contenido**
 
-
 [Historial de Versiones](#historial-de-versiones)
+
 
 [Conceptos Básicos de Docker](#conceptos-básicos-de-docker)
 
 
+#### Recopilación de Comandos
 
-1. <span>[docker version](#docker-version)</span>
-2. <span style="color:purple">[docker info](#docker-info)</span>
-3. <span style="color:purple">[docker pull](#docker-pull)</span>
-4. <span style="color:purple">[docker images](#docker-images)</span>
-5. <span style="color:purple">[docker run](#docker-run)</span>
-6. <span style="color:purple">[docker ps](#docker-ps)</span>
-7. <span style="color:purple">[docker ps -a](#docker-ps--a)</span>
-8. <span style="color:purple">[docker stop](#docker-stop)</span>
-9. <span style="color:purple">[docker start](#docker-start)</span>
-10. <span style="color:purple">[docker restart](#docker-restart)</span>
-11. <span style="color:purple">[docker kill](#docker-kill)</span>
-12. <span style="color:purple">[docker rm](#docker-rm)</span>
-13. <span style="color:purple">[docker rmi](#docker-rmi)</span>
-14. <span style="color:purple">[docker build](#docker-build)</span>
-15. <span style="color:purple">[docker exec](#docker-exec)</span>
-16. <span style="color:purple">[docker logs](#docker-logs)</span>
-17. <span style="color:purple">[docker inspect](#docker-inspect)</span>
-18. <span style="color:purple">[docker commit](#docker-commit)</span>
-19. <span style="color:purple">[docker tag](#docker-tag)</span>
-20. <span style="color:purple">[docker push](#docker-push)</span>
-21. <span style="color:purple">[docker network ls](#docker-network-ls)</span>
-22. <span style="color:purple">[docker network inspect](#docker-network-inspect)</span>
-23. <span style="color:purple">[docker network create](#docker-network-create)</span>
-24. <span style="color:purple">[docker network rm](#docker-network-rm)</span>
-25. <span style="color:purple">[docker volume ls](#docker-volume-ls)</span>
-26. <span style="color:purple">[docker volume inspect](#docker-volume-inspect)</span>
-27. <span style="color:purple">[docker volume create](#docker-volume-create)</span>
-28. <span style="color:purple">[docker volume rm](#docker-volume-rm)</span>
-29. <span style="color:purple">[docker-compose up](#docker-compose-up)</span>
-30. <span style="color:purple">[docker-compose down](#docker-compose-down)</span>
-31. <span style="color:purple">[docker-compose ps](#docker-compose-ps)</span>
-32. <span style="color:purple">[docker-compose logs](#docker-compose-logs)</span>
-33. <span style="color:purple">[docker-compose build](#docker-compose-build)</span>
-34. <span style="color:purple">[docker-compose exec](#docker-compose-exec)</span>
+1. <span>[docker version](#docker-version)
+2. <span>[docker info](#docker-info)</span>
+3. <span>[docker pull](#docker-pull)</span>
+4. <span>[docker images](#docker-images)</span>
+5. <span>[docker run](#docker-run)</span>
+6. <span>[docker ps](#docker-ps)</span>
+7. <span>[docker ps -a](#docker-ps--a)</span>
+8. <span>[docker stop](#docker-stop)</span>
+9. <span>[docker start](#docker-start)</span>
+10. <span>[docker restart](#docker-restart)</span>
+11. <span>[docker kill](#docker-kill)</span>
+12. <span>[docker rm](#docker-rm)</span>
+13. <span>[docker rmi](#docker-rmi)</span>
+14. <span>[docker build](#docker-build)</span>
+15. <span>[docker exec](#docker-exec)</span>
+16. <span>[docker logs](#docker-logs)</span>
+17. <span>[docker inspect](#docker-inspect)</span>
+18. <span>[docker commit](#docker-commit)</span>
+19. <span>[docker tag](#docker-tag)</span>
+20. <span>[docker push](#docker-push)</span>
+21. <span>[docker network ls](#docker-network-ls)</span>
+22. <span>[docker network inspect](#docker-network-inspect)</span>
+23. <span>[docker network create](#docker-network-create)</span>
+24. <span>[docker network rm](#docker-network-rm)</span>
+25. <span>[docker volume ls](#docker-volume-ls)</span>
+26. <span>[docker volume inspect](#docker-volume-inspect)</span>
+27. <span>[docker volume create](#docker-volume-create)</span>
+28. <span>[docker volume rm](#docker-volume-rm)</span>
+29. <span>[docker-compose up](#docker-compose-up)</span>
+30. <span>[docker-compose down](#docker-compose-down)</span>
+31. <span>[docker-compose ps](#docker-compose-ps)</span>
+32. <span>[docker-compose logs](#docker-compose-logs)</span>
+33. <span>[docker-compose build](#docker-compose-build)</span>
+34. <span>[docker-compose exec](#docker-compose-exec)</span>
+    
 
-
-
-
+    
 ---
-
 
 
 ## Conceptos Básicos de Docker
