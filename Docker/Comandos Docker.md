@@ -4,10 +4,19 @@
 
 
 
-#### <p align="center"><span style="color:purple">_Fecha: 07/06/2024_</span></p>
+#### <p align="center"><span style="color:purple">Fecha: 07/06/2024</span></p>
+
+
+## **Tabla de contenido**
+
+
+[Historial de Versiones](#historial-de-versiones)
+
 [Conceptos Básicos de Docker](#conceptos-básicos-de-docker)
 
-1. <span style="color:purple">[docker version](#docker-version)</span>
+
+
+1. <span>[docker version](#docker-version)</span>
 2. <span style="color:purple">[docker info](#docker-info)</span>
 3. <span style="color:purple">[docker pull](#docker-pull)</span>
 4. <span style="color:purple">[docker images](#docker-images)</span>
@@ -43,7 +52,7 @@
 34. <span style="color:purple">[docker-compose exec](#docker-compose-exec)</span>
 
 
-[Historial de Versiones](#historial-de-versiones)
+
 
 ---
 
