@@ -1,21 +1,11 @@
-# <p align="center"><span style="color:blue">`DOCKER`</span></p>
-**Resumen:**
-Proporciona información detallada sobre la instalación de Docker, incluyendo datos sobre contenedores, imágenes, volúmenes, red y configuración del sistema. Es útil para obtener una visión general del estado y la configuración de Docker en tu sistema..
-
-   
-```sql
-   docker info
-```
----
-# <p align="center"><span style="color:green">_Recopilación de Comandos para Docker_</span></p>
-#### <p align="center"><span style="color:red">_Fecha: [07/06/2024]_</span></p>
-
----
+<div align="center">
+    <img src="https://logopng.com.br/logos/docker-27.png" alt="Texto alternativo" style="width: 200px;"/>
+</div>
 
 
-## **Tabla de contenido**
 
-
+#### <p align="center"><span style="color:purple">_Fecha: 07/06/2024_</span></p>
+[Conceptos Básicos de Docker](#conceptos-básicos-de-docker)
 
 1. <span style="color:purple">[docker version](#docker-version)</span>
 2. <span style="color:purple">[docker info](#docker-info)</span>
@@ -52,8 +42,128 @@ Proporciona información detallada sobre la instalación de Docker, incluyendo d
 33. <span style="color:purple">[docker-compose build](#docker-compose-build)</span>
 34. <span style="color:purple">[docker-compose exec](#docker-compose-exec)</span>
 
- <span style="color:purple">[Historial de Versiones](#historial-de-versiones)</span>
+
+[Historial de Versiones](#historial-de-versiones)
+
 ---
+
+
+
+## Conceptos Básicos de Docker
+ <span style="color:purple">[Inicio](#tabla-de-contenido)</span>
+
+1- Contenedores: Los contenedores son unidades ligeras y portátiles que incluyen todo lo necesario para ejecutar una aplicación, como el código, las bibliotecas y las dependencias. Son más eficientes que las máquinas virtuales (VM) porque comparten el mismo sistema operativo host y solo contienen los archivos y configuraciones necesarios para ejecutarse.
+
+2- Imágenes: Una imagen de Docker es una plantilla inmutable que contiene el sistema de archivos y las aplicaciones necesarias para ejecutar un contenedor. Las imágenes se construyen a partir de un archivo llamado Dockerfile, que especifica las instrucciones para crear la imagen.
+
+3- Dockerfile: Es un archivo de texto que contiene una serie de comandos que Docker usa para ensamblar una imagen. En el caso de aplicaciones .NET, se suelen usar imágenes base proporcionadas por Microsoft, como mcr.microsoft.com/dotnet/aspnet para aplicaciones ASP.NET Core.
+
+4- Registries: Son repositorios donde se almacenan y distribuyen las imágenes de Docker. Docker Hub es el registry público más conocido, pero también existen registries privados.
+
+5- Beneficios de Docker en el Desarrollo de Software
+Consistencia: Docker asegura que la aplicación se ejecute de manera idéntica en diferentes entornos (desarrollo, pruebas, producción), eliminando problemas de "funciona en mi máquina".
+
+6- Portabilidad: Los contenedores se pueden ejecutar en cualquier lugar donde Docker esté instalado, ya sea en un entorno local, en servidores on-premises o en la nube.
+
+7- Aislamiento: Cada contenedor tiene su propio entorno aislado, lo que permite ejecutar múltiples aplicaciones en el mismo host sin conflictos.
+
+8- Escalabilidad: Docker facilita la escalabilidad horizontal, permitiendo ejecutar múltiples instancias de una aplicación de manera sencilla.
+
+## Docker en el Entorno de .NET
+Desarrollo y Pruebas: Docker permite a los desarrolladores .NET crear entornos de desarrollo consistentes y reproducibles. Utilizando Docker Compose, se pueden definir y administrar aplicaciones multi-contenedor (por ejemplo, una aplicación web .NET Core, una base de datos SQL Server, y un servicio de caching).
+
+Integración Continua/Entrega Continua (CI/CD): Docker se integra perfectamente con sistemas de CI/CD como Azure DevOps, Jenkins, y GitHub Actions. Las imágenes de Docker se pueden construir y probar como parte del pipeline de CI/CD, asegurando que la aplicación esté lista para ser desplegada en cualquier entorno.
+
+Microservicios: Docker es ideal para arquitecturas de microservicios, donde cada servicio puede ser empaquetado y desplegado independientemente. .NET Core y .NET 6/7/8 son altamente compatibles con este enfoque debido a su naturaleza multiplataforma y ligera.
+
+Azure Kubernetes Service (AKS): Docker se utiliza comúnmente junto con Kubernetes, un orquestador de contenedores, para gestionar despliegues a gran escala. AKS facilita la gestión y escalabilidad de aplicaciones .NET contenedorizadas en la nube de Azure.
+
+
+## Dockerfile
+El Dockerfile es un archivo de texto que contiene una serie de instrucciones que Docker utiliza para construir una imagen de contenedor. Cada instrucción en el Dockerfile crea una capa en la imagen, permitiendo construir el entorno necesario para ejecutar una aplicación
+```C#
+
+ # https://hub.docker.com/_/microsoft-dotnet
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+
+USER app
+WORKDIR /app
+EXPOSE 5080
+EXPOSE 5081
+
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+ARG BUILD_CONFIGURATION=Release
+
+WORKDIR /src
+
+# Copiar todos los archivos de la solución
+COPY . .
+
+# Restaurar dependencias
+RUN dotnet restore
+
+# Compilar la aplicación
+RUN dotnet build -c $BUILD_CONFIGURATION -o /app/build
+
+FROM build AS publish
+ARG BUILD_CONFIGURATION=Release
+
+# Publicar la aplicación
+RUN dotnet publish -c $BUILD_CONFIGURATION -o /app/publish --no-restore
+
+FROM base AS final
+WORKDIR /app
+
+# Copiar los archivos publicados
+COPY --from=publish /app/publish .
+
+ENTRYPOINT ["dotnet", "Application.dll"]
+
+```
+
+## .dockerignore
+El archivo .dockerignore es similar a un archivo .gitignore y se utiliza para especificar qué archivos o directorios deben ser excluidos durante el proceso de construcción de una imagen de Docker. Esto es útil para evitar copiar archivos innecesarios, como archivos temporales, directorios de compilación, archivos de configuración específicos del entorno, etc., en la imagen del contenedor, lo que puede reducir el tamaño de la imagen y mejorar los tiempos de construcción.
+
+```C#
+**/.classpath
+**/.dockerignore
+**/.env
+**/.git
+**/.gitignore
+**/.project
+**/.settings
+**/.toolstarget
+**/.vs
+**/.vscode
+**/*.*proj.user
+**/*.dbmdl
+**/*.jfm
+**/azds.yaml
+**/bin
+**/charts
+**/docker-compose*
+**/Dockerfile*
+**/node_modules
+**/npm-debug.log
+**/obj
+**/secrets.dev.yaml
+**/values.dev.yaml
+LICENSE
+README.md
+!**/.gitignore
+!.git/HEAD
+!.git/config
+!.git/packed-refs
+!.git/refs/heads/**
+
+ 
+```
+---
+# <p align="center"><span style="color:purple">_Recopilación de Comandos para Docker_</span></p>
+---
+
+
+
 
 
 
@@ -601,4 +711,4 @@ comando: El comando que se desea ejecutar dentro del servicio.
 
 Fecha       | Versión | Autor       | Organización | Descripción
 ------------|---------|-------------|--------------|---------------------
-14/02/2024  | 01      | Dario Cano  | Cliente      | Nueva funcionalidad
+07/06/2024  | 01      | Dario Cano  | Cliente      | Docker
