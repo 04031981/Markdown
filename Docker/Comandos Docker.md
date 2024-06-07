@@ -58,11 +58,22 @@ Proporciona información detallada sobre la instalación de Docker, incluyendo d
 
 
 ---
+## Docker version
+
+ <span style="color:purple">[Inicio](#tabla-de-contenido)</span>
+
+1. **docker version:**
+Muestra la versión de Docker instalada en tu máquina.
+
+   
+```sh
+   docker version
+```
 ## Docker Info
 
  <span style="color:purple">[Inicio](#tabla-de-contenido)</span>
 
-1. **docker info:**
+2. **docker info:**
 Proporciona información detallada sobre la instalación de Docker, incluyendo datos sobre contenedores, imágenes, volúmenes, red y configuración del sistema. Es útil para obtener una visión general del estado y la configuración de Docker en tu sistema..
 
    
@@ -74,7 +85,7 @@ Proporciona información detallada sobre la instalación de Docker, incluyendo d
 
  <span style="color:purple">[Inicio](#tabla-de-contenido)</span>
 
-1. **docker pull:**
+3. **docker pull:**
 Descarga una imagen desde un repositorio (normalmente Docker Hub). Este comando se utiliza para obtener la última versión de una imagen de contenedor.
 
    
@@ -87,7 +98,7 @@ Descarga una imagen desde un repositorio (normalmente Docker Hub). Este comando 
 
 <span style="color:purple">[Inicio](#tabla-de-contenido)</span>
 
-3. **docker images:**
+4. **docker images:**
 Lista todas las imágenes descargadas en tu sistema. Proporciona información sobre las imágenes disponibles localmente, como el nombre, la etiqueta, el ID de la imagen, la fecha de creación y el tamaño.
 
 
@@ -104,7 +115,7 @@ docker images
 <span style="color:purple">[Inicio](#tabla-de-contenido)</span> 
 
 
-4. **docker run:**
+5. **docker run:**
 Crea y ejecuta un contenedor a partir de una imagen. Puedes especificar parámetros como el mapeo de puertos, variables de entorno, volúmenes, entre otros. La opción -d ejecuta el contenedor en segundo plano (detached mode).
 
 
@@ -120,7 +131,7 @@ docker run -d -p 80:80 nombre_imagen
 
 <span style="color:purple">[Inicio](#tabla-de-contenido)</span>
 
-5. **docker ps:**
+6. **docker ps:**
 Lista los contenedores en ejecución. Proporciona información sobre los contenedores activos, como el ID, la imagen, el comando, el tiempo de ejecución, los puertos expuestos y el nombre del contenedor.
 ```sh
    docker ps
@@ -131,7 +142,7 @@ Lista los contenedores en ejecución. Proporciona información sobre los contene
 
 <span style="color:purple">[Inicio](#tabla-de-contenido)</span> 
 
-6. **docker ps -a:**
+7. **docker ps -a:**
 Lista todos los contenedores, incluyendo los que no están en ejecución. Es útil para ver el historial de todos los contenedores creados en tu sistema.
 ```sh
 
@@ -146,7 +157,7 @@ Lista todos los contenedores, incluyendo los que no están en ejecución. Es út
 
 <span style="color:purple">[Inicio](#tabla-de-contenido)</span>
 
-7. **docker stop:**
+8. **docker stop:**
 
 Detiene un contenedor en ejecución de manera ordenada. Envía una señal SIGTERM al contenedor y espera un tiempo predeterminado antes de forzar su detención con SIGKILL si no se ha detenido.
 
@@ -161,7 +172,7 @@ En este ejemplo, se debe agregar el id del contenedor el cual se debe detener.
 
 <span style="color:purple">[Inicio](#tabla-de-contenido)</span>
 
-8. **docker start:**
+9. **docker start:**
 
 Inicia un contenedor detenido. Este comando es útil para reanudar la ejecución de contenedores que han sido detenidos anteriormente.
 
@@ -178,7 +189,7 @@ En este ejemplo, se debe agregar el id del contenedor el cual se debe inicializa
 
 <span style="color:purple">[Inicio](#tabla-de-contenido)</span>
 
-9. **docker restart:**
+10. **docker restart:**
 
 Reinicia un contenedor. Primero detiene el contenedor y luego lo inicia nuevamente. Es útil para aplicar cambios de configuración o solucionar problemas sin crear un nuevo contenedor.  Ejemplo:
 
@@ -191,7 +202,7 @@ docker restart id_contenedor
 
 <span style="color:purple">[Inicio](#tabla-de-contenido)</span>
 
-10. **docker kill:**
+11. **docker kill:**
 
 Detiene un contenedor de forma inmediata (forzada) enviando una señal SIGKILL, lo que no permite al contenedor realizar una parada ordenada. Por ejemplo:
 
@@ -205,7 +216,7 @@ docker kill id_contenedor
 
 <span style="color:purple">[Inicio](#tabla-de-contenido)</span>
 
-11. **docker rm:**
+12. **docker rm:**
 
 Elimina un contenedor detenido. Este comando se utiliza para liberar recursos y limpiar contenedores no deseados. Por ejemplo:
 
@@ -219,7 +230,7 @@ docker rm id_contenedor
 
 <span style="color:purple">[Inicio](#tabla-de-contenido)</span>
 
-12. **docker rmi:**
+13. **docker rmi:**
 
 Elimina una imagen de Docker de tu sistema. Es útil para liberar espacio y gestionar imágenes no deseadas.
 
@@ -232,7 +243,7 @@ docker rmi nombre_imagen:tag
 
 <span style="color:purple">[Inicio](#tabla-de-contenido)</span>
 
-13. **docker build:**
+14. **docker build:**
 
 Construye una imagen a partir de un Dockerfile. Puedes especificar un nombre y una etiqueta para la imagen utilizando la opción -t . es muy importante el punto al final
 
@@ -249,7 +260,7 @@ docker build -t nombre_imagen .
 
 <span style="color:purple">[Inicio](#tabla-de-contenido)</span>
 
-14. **docker exec:**
+15. **docker exec:**
 
 Explicación: Permite ejecutar un comando dentro de un contenedor en ejecución. Por ejemplo:
 
@@ -269,7 +280,7 @@ docker exec -it nombre_contenedor comando
 
 <span style="color:purple">[Inicio](#tabla-de-contenido)</span>
 
-15. **docker logs:**
+16. **docker logs:**
 
 Explicación: Muestra los registros (logs) de un contenedor en tiempo real. Por ejemplo:
 
@@ -284,7 +295,7 @@ nombre_contenedor: El nombre o ID del contenedor del que se desean ver los regis
 
 <span style="color:purple">[Inicio](#tabla-de-contenido)</span>
 
-16. **docker inspect:**
+17. **docker inspect:**
 
 Proporciona información detallada sobre un contenedor, imagen, red o volumen de Docker. Por ejemplo:
 
@@ -301,7 +312,7 @@ Esto garantiza que las dos actualizaciones se realicen correctamente o ninguna d
 <span style="color:purple">[Inicio](#tabla-de-contenido)</span>
 
 
-17. **docker commit:**
+18. **docker commit:**
     Explicación: Crea una nueva imagen a partir de un contenedor en ejecución.
 ```sh
 docker commit nombre_contenedor nombre_imagen
@@ -316,7 +327,7 @@ nombre_imagen: El nombre y la etiqueta de la nueva imagen que se creará.
 <span style="color:purple">[Inicio](#tabla-de-contenido)</span>
 
 
-18. **docker tag:**
+19. **docker tag:**
  Asigna una etiqueta a una imagen de Docker existente.
 ```sh
 
@@ -332,7 +343,7 @@ nombre_nueva_etiqueta: La nueva etiqueta que se asignará a la imagen.
 <span style="color:purple">[Inicio](#tabla-de-contenido)</span>
 
 
-19. **docker push:**
+20. **docker push:**
  Asigna una etiqueta a una imagen de Docker existente.
 ```sh
 
@@ -353,30 +364,12 @@ nombre_imagen: El nombre de la imagen que se desea subir al repositorio remoto.
 <span style="color:purple">[Inicio](#tabla-de-contenido)</span>
 
 
-20. **docker network ls:**
+21. **docker network ls:**
 Proporciona información detallada sobre una red de Docker específica.
 ```sh
 
 docker network ls
 ```
-
-
-
-
-
-
-## Docker network create
-
-<span style="color:purple">[Inicio](#tabla-de-contenido)</span>
-
-
-21. **docker network create:**
-Crea una nueva red de Docker.
-```sh
-docker network rm nombre_red
-```
-
-
 
 
 
@@ -394,12 +387,34 @@ docker network inspect nombre_red
 ```
 
 
+
+
+
+
+## Docker network create
+
+<span style="color:purple">[Inicio](#tabla-de-contenido)</span>
+
+
+23. **docker network create:**
+Crea una nueva red de Docker.
+```sh
+docker network rm nombre_red
+```
+
+
+
+
+
+
+
+
 ## docker network rm
 
 <span style="color:purple">[Inicio](#tabla-de-contenido)</span>
 
 
-23. **docker network rm:**
+24. **docker network rm:**
 Elimina una red de Docker existente.
 ```sh
 
@@ -417,7 +432,7 @@ docker network rm nombre_red
 <span style="color:purple">[Inicio](#tabla-de-contenido)</span>
 
 
-24. **docker volume ls:**
+25. **docker volume ls:**
 Lista todos los volúmenes de Docker disponibles en el sistema.
 
 ```sh
