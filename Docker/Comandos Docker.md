@@ -185,7 +185,7 @@ README.md
 Muestra la versión de Docker instalada en tu máquina.
 
    
-```sh
+```powershell
    docker version
 ```
 ## Docker Info
@@ -196,8 +196,10 @@ Muestra la versión de Docker instalada en tu máquina.
 Proporciona información detallada sobre la instalación de Docker, incluyendo datos sobre contenedores, imágenes, volúmenes, red y configuración del sistema. Es útil para obtener una visión general del estado y la configuración de Docker en tu sistema..
 
    
-```sql
+```powershell
+
    docker info
+
 ```
 ---
 ## Docker pull
@@ -208,8 +210,10 @@ Proporciona información detallada sobre la instalación de Docker, incluyendo d
 Descarga una imagen desde un repositorio (normalmente Docker Hub). Este comando se utiliza para obtener la última versión de una imagen de contenedor.
 
    
-```sql
+```spowershell
+
    docker pull
+
 ```
 ---
 
@@ -221,8 +225,10 @@ Descarga una imagen desde un repositorio (normalmente Docker Hub). Este comando 
 Lista todas las imágenes descargadas en tu sistema. Proporciona información sobre las imágenes disponibles localmente, como el nombre, la etiqueta, el ID de la imagen, la fecha de creación y el tamaño.
 
 
-```sql
+```powershell
+
 docker images
+
 ```
 
 
@@ -238,7 +244,8 @@ docker images
 Crea y ejecuta un contenedor a partir de una imagen. Puedes especificar parámetros como el mapeo de puertos, variables de entorno, volúmenes, entre otros. La opción -d ejecuta el contenedor en segundo plano (detached mode).
 
 
-```sh
+```powershell
+
 docker run -d -p 80:80 nombre_imagen
 
 ```
@@ -252,7 +259,8 @@ docker run -d -p 80:80 nombre_imagen
 
 6. **docker ps:**
 Lista los contenedores en ejecución. Proporciona información sobre los contenedores activos, como el ID, la imagen, el comando, el tiempo de ejecución, los puertos expuestos y el nombre del contenedor.
-```sh
+```powershell
+
    docker ps
 
 ```
@@ -263,9 +271,11 @@ Lista los contenedores en ejecución. Proporciona información sobre los contene
 
 7. **docker ps -a:**
 Lista todos los contenedores, incluyendo los que no están en ejecución. Es útil para ver el historial de todos los contenedores creados en tu sistema.
-```sh
+
+```powershell
 
    docker ps -a
+
 ```
 
 
@@ -280,7 +290,8 @@ Lista todos los contenedores, incluyendo los que no están en ejecución. Es út
 
 Detiene un contenedor en ejecución de manera ordenada. Envía una señal SIGTERM al contenedor y espera un tiempo predeterminado antes de forzar su detención con SIGKILL si no se ha detenido.
 
-```sh
+```powershell
+
 docker stop id_contenedor
 
 ```
@@ -295,7 +306,7 @@ En este ejemplo, se debe agregar el id del contenedor el cual se debe detener.
 
 Inicia un contenedor detenido. Este comando es útil para reanudar la ejecución de contenedores que han sido detenidos anteriormente.
 
-```sql
+```powershell
 
 docker start id_contenedor
 
@@ -312,7 +323,8 @@ En este ejemplo, se debe agregar el id del contenedor el cual se debe inicializa
 
 Reinicia un contenedor. Primero detiene el contenedor y luego lo inicia nuevamente. Es útil para aplicar cambios de configuración o solucionar problemas sin crear un nuevo contenedor.  Ejemplo:
 
-```sh
+```powershell
+
 docker restart id_contenedor
 
 ```
@@ -325,7 +337,8 @@ docker restart id_contenedor
 
 Detiene un contenedor de forma inmediata (forzada) enviando una señal SIGKILL, lo que no permite al contenedor realizar una parada ordenada. Por ejemplo:
 
-```sh
+```powershell
+
 docker kill id_contenedor
 
 ```
@@ -339,7 +352,8 @@ docker kill id_contenedor
 
 Elimina un contenedor detenido. Este comando se utiliza para liberar recursos y limpiar contenedores no deseados. Por ejemplo:
 
-```sh
+```spowershell
+
 docker rm id_contenedor
 
 ``` 
@@ -353,8 +367,10 @@ docker rm id_contenedor
 
 Elimina una imagen de Docker de tu sistema. Es útil para liberar espacio y gestionar imágenes no deseadas.
 
-```sh
+```powershell
+
 docker rmi nombre_imagen:tag
+
 ```
 ---
 
@@ -366,9 +382,9 @@ docker rmi nombre_imagen:tag
 
 Construye una imagen a partir de un Dockerfile. Puedes especificar un nombre y una etiqueta para la imagen utilizando la opción -t . es muy importante el punto al final
 
-```sh
-docker build -t nombre_imagen .
+```powershell
 
+docker build -t nombre_imagen .
 
 ```
 -t nombre_imagen: Especifica el nombre y la etiqueta de la imagen que se va a construir.
@@ -378,6 +394,7 @@ docker build -t nombre_imagen .
 ## docker exec
 
 <span style="color:purple">[Inicio](#tabla-de-contenido)</span>
+
 
 15. **docker exec:**
 
@@ -389,7 +406,8 @@ nombre_contenedor: El nombre o ID del contenedor en el que se ejecutará el coma
 
 comando: El comando que se ejecutará dentro del contenedor.
 
-```sh
+```powershell
+
 docker exec -it nombre_contenedor comando
 
 ```
@@ -403,7 +421,8 @@ docker exec -it nombre_contenedor comando
 
 Explicación: Muestra los registros (logs) de un contenedor en tiempo real. Por ejemplo:
 
-```sh
+```powershell
+
 docker logs nombre_contenedor
 
 ```
@@ -420,8 +439,10 @@ Proporciona información detallada sobre un contenedor, imagen, red o volumen de
 
 nombre_objeto: El nombre o ID del contenedor, imagen, red o volumen del que se desea obtener información detallada.
 
-```sh
+```powershell
+
 docker inspect nombre_objeto
+
 ```
 Esto garantiza que las dos actualizaciones se realicen correctamente o ninguna de ellas se realice.
 
@@ -433,7 +454,9 @@ Esto garantiza que las dos actualizaciones se realicen correctamente o ninguna d
 
 18. **docker commit:**
     Explicación: Crea una nueva imagen a partir de un contenedor en ejecución.
-```sh
+
+```powershell
+
 docker commit nombre_contenedor nombre_imagen
 
 ```
@@ -448,11 +471,13 @@ nombre_imagen: El nombre y la etiqueta de la nueva imagen que se creará.
 
 19. **docker tag:**
  Asigna una etiqueta a una imagen de Docker existente.
-```sh
+
+```powershell
 
 docker tag nombre_imagen nombre_nueva_etiqueta
 
 ```
+
 nombre_imagen: El nombre de la imagen a la que se desea asignar una etiqueta.
 
 nombre_nueva_etiqueta: La nueva etiqueta que se asignará a la imagen.
@@ -464,10 +489,10 @@ nombre_nueva_etiqueta: La nueva etiqueta que se asignará a la imagen.
 
 20. **docker push:**
  Asigna una etiqueta a una imagen de Docker existente.
-```sh
+
+```powershell
 
 docker push nombre_imagen
-
 
 ```
 nombre_imagen: El nombre de la imagen que se desea subir al repositorio remoto.
@@ -485,9 +510,11 @@ nombre_imagen: El nombre de la imagen que se desea subir al repositorio remoto.
 
 21. **docker network ls:**
 Proporciona información detallada sobre una red de Docker específica.
-```sh
+
+```powershell
 
 docker network ls
+
 ```
 
 
@@ -498,8 +525,9 @@ docker network ls
 
 
 22. **docker network inspect:**
-Proporciona información detallada sobre una red de Docker específica..
-```sh
+Proporciona información detallada sobre una red de Docker específica.
+
+```powershell
 
 docker network inspect nombre_red
 
@@ -517,8 +545,11 @@ docker network inspect nombre_red
 
 23. **docker network create:**
 Crea una nueva red de Docker.
-```sh
+
+```powershell
+
 docker network rm nombre_red
+
 ```
 
 
@@ -535,7 +566,8 @@ docker network rm nombre_red
 
 24. **docker network rm:**
 Elimina una red de Docker existente.
-```sh
+
+```powershell
 
 docker network rm nombre_red
 
@@ -554,10 +586,9 @@ docker network rm nombre_red
 25. **docker volume ls:**
 Lista todos los volúmenes de Docker disponibles en el sistema.
 
-```sh
+```powershell
 
 docker volume ls
-
 
 ```
 
@@ -573,10 +604,9 @@ docker volume ls
 26. **docker volume inspect:**
 Proporciona información detallada sobre un volumen de Docker específico.
 
-```sh
+```shpowershell
 
 docker volume inspect nombre_volumen
-
 
 ```
 
@@ -590,10 +620,9 @@ docker volume inspect nombre_volumen
 27. **docker volume create:**
 Crea un nuevo volumen de Docker.
 
-```sh
+```powershell
 
 docker volume create nombre_volumen
-
 
 ```
 
@@ -605,10 +634,9 @@ docker volume create nombre_volumen
 28. **docker volume rm:**
 Elimina un volumen de Docker existente.
 
-```sh
+```powershell
 
 docker volume rm nombre_volumen
-
 
 ```
 
@@ -621,7 +649,7 @@ docker volume rm nombre_volumen
 29. **docker-compose up:**
 Crea y arranca servicios definidos en un archivo docker-compose.yml.
 
-```sh
+```powershell
 
 docker-compose up -d
 
@@ -637,7 +665,7 @@ docker-compose up -d
 30. **docker-compose down:**
 Detiene y elimina los contenedores creados por docker-compose up.
 
-```sh
+```powershell
 
 docker-compose down
 
@@ -655,7 +683,7 @@ docker-compose down
 31. **docker-compose ps:**
 Explicación: Lista los servicios definidos en el archivo docker-compose.yml.
 
-```sh
+```powershell
 
 docker-compose ps
 
@@ -670,7 +698,7 @@ docker-compose ps
 32. **docker-compose logs:**
 Muestra los logs de los servicios definidos en el archivo docker-compose.yml.
 
-```sh
+```powershell
 
 docker-compose logs nombre_servicio
 
@@ -688,10 +716,9 @@ docker-compose logs nombre_servicio
 33. **docker-compose build:**
 Construye los servicios definidos en el archivo docker-compose.yml.
 
-```sh
+```powershell
 
 docker-compose build
-
 
 ```
 
@@ -703,7 +730,7 @@ docker-compose build
 34. **docker-compose exec:**
 Ejecuta un comando en un servicio definido en el archivo docker-compose.yml.
 
-```sh
+```powershell
 
 docker-compose exec nombre_servicio comando
 
