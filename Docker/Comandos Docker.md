@@ -745,6 +745,6 @@ comando: El comando que se desea ejecutar dentro del servicio.
 ## Historial de Versiones
 
 
-Fecha       | Versión | Autor       | Organización | Descripción
-------------|---------|-------------|--------------|---------------------
-07/06/2024  | 01      | Dario Cano  | Cliente      | Docker
+Fecha       | Versión | Autor                 | Organización | Descripción
+------------|---------|-----------------------|--------------|------------
+07/06/2024  | 01      | Dario Cano Valdegaray | Uso Personal | Docker

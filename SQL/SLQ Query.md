@@ -419,6 +419,6 @@ Este código ejecutará el procedimiento almacenado InsertarPrestamo con los val
 ## Historial de Versiones
 
 
-Fecha       | Versión | Autor       | Organización | Descripción
-------------|---------|-------------|--------------|---------------------
-14/02/2024  | 01      | Dario Cano  | Cliente      | Nueva funcionalidad
+Fecha       | Versión | Autor                 | Organización | Descripción
+------------|---------|-----------------------|--------------|------------
+07/06/2024  | 01      | Dario Cano Valdegaray | Uso Personal | Docker
