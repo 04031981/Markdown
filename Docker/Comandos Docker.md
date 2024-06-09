@@ -61,7 +61,7 @@
 
 
 
-## conceptos basicos docker
+## Conceptos basicos de docker
 
  <span style="color:purple">[Inicio](#tabla-de-contenido)</span>
 
