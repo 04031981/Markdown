@@ -12,7 +12,9 @@
 [Historial de Versiones](#historial-de-versiones)
 
 
-[Conceptos Básicos de Docker](#conceptos-básicos-docker)
+[Conceptos Básicos de Docker](#conceptos-basicos-docker)
+
+
 
 
 #### Recopilación de Comandos
@@ -56,8 +58,10 @@
     
 ---
 
----
-## conceptos básicos docker
+
+
+
+## conceptos basicos docker
 
  <span style="color:purple">[Inicio](#tabla-de-contenido)</span>
 
